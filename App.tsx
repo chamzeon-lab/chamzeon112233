@@ -31,12 +31,15 @@ function App() {
                         <div className="absolute inset-0 bg-brand-gold/10 transform translate-x-4 translate-y-4 rounded-lg -z-10"></div>
                         <div className="rounded-lg overflow-hidden shadow-2xl bg-white border border-gray-100">
                              {/* 
-                                [안내] 
-                                실제 원장님 사진 파일이 있다면 프로젝트에 추가 후 src를 변경해주세요.
-                                예: src="/images/doctor_moon.jpg" 
+                                [사진 변경 안내] 
+                                public 폴더에 'doctor.jpg' 파일을 업로드하면 자동으로 해당 사진이 적용됩니다.
+                                파일이 없으면 아래 onError 함수에 의해 기본 이미지가 표시됩니다.
                              */}
                             <img 
-                                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                src="/doctor.jpg" 
+                                onError={(e) => {
+                                  e.currentTarget.src = "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+                                }}
                                 alt="문현철 원장" 
                                 className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
