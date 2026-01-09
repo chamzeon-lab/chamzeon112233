@@ -52,7 +52,7 @@ function App() {
                             <p className="text-lg text-brand-gold font-medium mb-6">밀양 참좋은동물병원 대표원장</p>
                             <p className="text-gray-600 leading-relaxed font-light">
                                 "말 못 하는 아이들의 마음까지 헤아리는 따뜻한 진료를 약속합니다.<br />
-                                대학병원급 장비와 풍부한 임상 경험을 바탕으로, 반려동물의 평생 주치의가 되겠습니다."
+                                풍부한 임상 경험을 바탕으로, 반려동물의 평생 주치의가 되겠습니다."
                             </p>
                         </div>
 
