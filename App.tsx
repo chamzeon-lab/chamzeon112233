@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import StatsSection from './components/StatsSection';
-import Services from './components/Services';
-import Features from './components/Features';
-import Footer from './components/Footer';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import StatsSection from './components/StatsSection.tsx';
+import Services from './components/Services.tsx';
+import Features from './components/Features.tsx';
+import Footer from './components/Footer.tsx';
 
 function App() {
   return (
@@ -30,11 +30,6 @@ function App() {
                     <div className="w-full lg:w-5/12 relative group">
                         <div className="absolute inset-0 bg-brand-gold/10 transform translate-x-4 translate-y-4 rounded-lg -z-10"></div>
                         <div className="rounded-lg overflow-hidden shadow-2xl bg-white border border-gray-100">
-                             {/* 
-                                [안내] 
-                                실제 원장님 사진 파일이 있다면 프로젝트에 추가 후 src를 변경해주세요.
-                                예: src="/images/doctor_moon.jpg" 
-                             */}
                             <img 
                                 src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                 alt="문현철 원장" 
@@ -125,9 +120,9 @@ function App() {
                     <p className="text-gray-600">참좋은동물병원 의료진이 항상 함께합니다.</p>
                 </div>
                 <div className="flex gap-4">
-                    <button className="bg-brand-navy text-white px-8 py-4 rounded-sm font-bold shadow-lg hover:bg-brand-gold transition-colors">
+                    <a href="tel:055-351-3581" className="bg-brand-navy text-white px-8 py-4 rounded-sm font-bold shadow-lg hover:bg-brand-gold transition-colors">
                         055-351-3581 전화걸기
-                    </button>
+                    </a>
                     <button className="bg-white text-brand-navy border border-gray-300 px-8 py-4 rounded-sm font-bold hover:bg-gray-50 transition-colors">
                         카카오톡 상담
                     </button>
