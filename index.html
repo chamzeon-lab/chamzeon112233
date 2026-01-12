@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>참좋은동물병원 | CHAMZEON</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['"Noto Sans KR"', 'sans-serif'],
-              serif: ['"Noto Serif KR"', 'serif'],
-            },
-            colors: {
-              brand: {
-                navy: '#1a2b4b',
-                gold: '#c5a059',
-                goldLight: '#e6c88b',
-                gray: '#f5f5f5',
-                dark: '#121212'
-              }
+        // Tailwind 설정
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#1a2b4b', gold: '#c5a059', goldLight: '#e6c88b', gray: '#f5f5f5', dark: '#121212'
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     </script>
     <style>
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
+</head>
+<body>
+    <div id="root">
+        <div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:sans-serif;">
+            <p>페이지를 불러오는 중입니다...</p>
+        </div>
+    </div>
+
     <script type="module" crossorigin src="./assets/index-CtsHz6io.js"></script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+    
+    <script>
+        // 만약 위 파일 로드에 실패했을 때 에러를 확인하기 위한 스크립트
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'SCRIPT') {
+                console.error('파일을 찾을 수 없습니다: ' + e.target.src);
+                document.getElementById('root').innerHTML = 
+                    '<div style="text-align:center; margin-top:50px;">' +
+                    '<h2>파일 로드 오류</h2>' +
+                    '<p>assets 폴더 안에 <b>index-CtsHz6io.js</b> 파일이 있는지 확인해주세요.</p>' +
+                    '</div>';
+            }
+        }, true);
+    </script>
+</body>
 </html>
