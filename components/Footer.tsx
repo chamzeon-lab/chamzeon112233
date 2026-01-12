@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Clock, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Phone, MapPin, Clock, Instagram, Youtube, Facebook, Stethoscope } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -9,19 +9,13 @@ const Footer: React.FC = () => {
           
           {/* Brand Info */}
           <div>
-            {/* 로고 이미지: 실제 로고 파일(logo.png)을 public 폴더에 넣거나 경로를 수정해주세요. */}
-            <div className="mb-6 bg-white inline-block p-2 rounded-md">
-                <img 
-                    src="/logo.png" 
-                    alt="참좋은동물병원" 
-                    className="h-10 w-auto object-contain"
-                    onError={(e) => {
-                        // 이미지가 없을 경우를 대비한 텍스트 폴백 (개발 중 편의를 위함)
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.parentElement!.innerText = '참좋은동물병원';
-                        e.currentTarget.parentElement!.className = 'mb-6 text-2xl font-bold font-serif text-brand-navy bg-white px-3 py-1 rounded inline-block';
-                    }}
-                />
+            <div className="mb-6 flex items-center gap-2">
+                <div className="p-2 bg-brand-gold rounded-lg text-brand-navy">
+                    <Stethoscope size={20} />
+                </div>
+                <span className="text-2xl font-bold font-serif text-white">
+                    참좋은<span className="text-brand-gold">동물병원</span>
+                </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               참좋은동물병원은 <br/>
@@ -85,7 +79,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Map View */}
-          <div className="rounded-lg overflow-hidden h-48 bg-gray-800 relative group">
+          <div className="rounded-lg overflow-hidden h-48 bg-gray-800 relative group border border-white/5">
              <iframe 
                 width="100%" 
                 height="100%" 

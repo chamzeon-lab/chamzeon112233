@@ -31,15 +31,12 @@ function App() {
                         <div className="absolute inset-0 bg-brand-gold/10 transform translate-x-4 translate-y-4 rounded-lg -z-10"></div>
                         <div className="rounded-lg overflow-hidden shadow-2xl bg-white border border-gray-100">
                              {/* 
-                                [사진 변경 안내] 
-                                public 폴더에 'doctor.jpg' 파일을 업로드하면 자동으로 해당 사진이 적용됩니다.
-                                파일이 없으면 아래 onError 함수에 의해 기본 이미지가 표시됩니다.
+                                [안내] 
+                                실제 원장님 사진 파일이 있다면 프로젝트에 추가 후 src를 변경해주세요.
+                                예: src="/images/doctor_moon.jpg" 
                              */}
                             <img 
-                                src="/doctor.jpg" 
-                                onError={(e) => {
-                                  e.currentTarget.src = "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                                }}
+                                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                 alt="문현철 원장" 
                                 className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
@@ -55,7 +52,7 @@ function App() {
                             <p className="text-lg text-brand-gold font-medium mb-6">밀양 참좋은동물병원 대표원장</p>
                             <p className="text-gray-600 leading-relaxed font-light">
                                 "말 못 하는 아이들의 마음까지 헤아리는 따뜻한 진료를 약속합니다.<br />
-                                풍부한 임상 경험을 바탕으로, 반려동물의 평생 주치의가 되겠습니다."
+                                대학병원급 장비와 풍부한 임상 경험을 바탕으로, 반려동물의 평생 주치의가 되겠습니다."
                             </p>
                         </div>
 

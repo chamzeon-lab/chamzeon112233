@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Stethoscope } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,22 +31,16 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
+        {/* SVG Icon Logo */}
         <a href="#" className="flex items-center gap-2 z-50">
-          {!logoError ? (
-            <img 
-              src="/logo.png" 
-              alt="참좋은동물병원" 
-              className="h-10 md:h-12 w-auto object-contain"
-              onError={() => setLogoError(true)}
-            />
-          ) : (
-            <span className={`font-serif text-2xl font-bold tracking-tight ${
-              isScrolled || isMobileMenuOpen ? 'text-brand-navy' : 'text-white'
-            }`}>
-              참좋은동물병원
-            </span>
-          )}
+          <div className={`p-2 rounded-lg transition-colors ${isScrolled || isMobileMenuOpen ? 'bg-brand-navy text-white' : 'bg-white/10 backdrop-blur-md text-brand-gold'}`}>
+            <Stethoscope size={24} />
+          </div>
+          <span className={`font-serif text-xl md:text-2xl font-bold tracking-tight transition-colors ${
+            isScrolled || isMobileMenuOpen ? 'text-brand-navy' : 'text-white'
+          }`}>
+            참좋은<span className="text-brand-gold">동물병원</span>
+          </span>
         </a>
 
         {/* Desktop Menu */}
