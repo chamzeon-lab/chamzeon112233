@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
-      tailwind.config = {
+      // Tailwing config
+      window.tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
@@ -26,37 +27,51 @@
             }
           }
         }
-      }
+      };
+
+      // Error handler to catch loading issues
+      window.addEventListener('error', function(e) {
+        console.error('Runtime Error:', e.message);
+        if (e.message.includes('Script error')) {
+          console.warn('Check CORS or MIME types for your .tsx files.');
+        }
+      });
     </script>
     <style>
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      #root:empty::before {
+        content: "잠시만 기다려 주세요... 로딩 중입니다.";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #1a2b4b;
+        font-family: sans-serif;
       }
     </style>
-  <script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+    "react": "https://esm.sh/react@19.0.0?bundle",
+    "react/": "https://esm.sh/react@19.0.0/",
+    "react-dom": "https://esm.sh/react-dom@19.0.0?bundle",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client?bundle",
+    "lucide-react": "https://esm.sh/lucide-react@0.468.0?bundle",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
-    <!-- Load the main entry point with Babel transpilation -->
-    <script type="text/babel" data-type="module" data-presets="react,typescript" src="./index.tsx"></script>
+    <!-- Babel standalone entry point -->
+    <script 
+      type="text/babel" 
+      data-type="module" 
+      data-presets="react,typescript" 
+      src="index.tsx">
+    </script>
   </body>
 </html>
